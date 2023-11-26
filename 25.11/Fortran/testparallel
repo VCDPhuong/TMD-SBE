@@ -1,0 +1,22 @@
+subroutine commu(A, B, C)
+    use omp_lib
+    implicit none
+    double complex, dimension(:,:,:,:), intent(in) :: A, B
+    double complex, dimension(:,:,:,:), intent(out) :: C
+    integer :: m, n
+
+    ! Initialize C to zero
+    C = 0.0
+
+    ! Loop over the last two indices
+    !$OMP PARALLEL DO PRIVATE(m)
+    do m = lbound(A,3), ubound(A,3)
+    	!$OMP PARALLEL DO PRIVATE(n)
+        do n = lbound(A,4), ubound(A,4)
+            ! Calculate the commutator using matmul
+            C(:,:,m,n) = matmul(A(:,:,m,n), B(:,:,m,n)) - matmul(B(:,:,m,n), A(:,:,m,n))
+        end do
+        !$OMP END PARALLEL DO
+    end do
+    !$OMP END PARALLEL DO
+end subroutine commu
