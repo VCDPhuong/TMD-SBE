@@ -1,0 +1,33 @@
+{
+    "window.zoomLevel": 0,
+    "task.problemMatchers.neverPrompt": {
+        "shell": true
+    },
+    "terminal.integrated.fontFamily": "monospace",
+    "workbench.startupEditor": "newUntitledFile",
+    "[fortran_fixed-form]": {
+        "editor.rulers": [
+            6,
+            72
+        ]
+    },
+    "[FortranFreeForm]": {
+        "editor.rulers": [
+            132
+        ]
+    },
+    "[fortran-modern]": {
+        "editor.rulers": [
+            132
+        ]
+    },
+    "[fortran]": {
+        "editor.rulers": [
+            132
+        ]
+    },
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#458cff"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+}
